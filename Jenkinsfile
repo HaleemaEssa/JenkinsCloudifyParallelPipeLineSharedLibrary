@@ -51,7 +51,7 @@ pipeline {
             //dockerBuild("haleema/docker-rpi:latest")
             sleep(time: 3, unit: "SECONDS")
             //sh 'docker run --privileged -t haleema/docker-rpi'
-            dockerRun("haleema/docker-rpi")
+            dockerRunPi("haleema/docker-rpi")
             sleep(time: 4, unit: "SECONDS")
                } catch (Throwable e) {
                         echo "Caught ${e.toString()}"
