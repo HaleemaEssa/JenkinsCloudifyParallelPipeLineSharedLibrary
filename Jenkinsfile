@@ -126,7 +126,7 @@ pipeline {
        
     stage('Receiving Data in AWS Instance') {
            options {
-                timeout(time: 60, unit: "SECONDS")
+                timeout(time: 80, unit: "SECONDS")
             }     
           agent {label 'aws'}
           steps {
