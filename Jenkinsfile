@@ -126,14 +126,14 @@ pipeline {
        
     stage('Receiving Data in AWS Instance') {
            options {
-                timeout(time: 80, unit: "SECONDS")
+                timeout(time: 60, unit: "SECONDS")
             }     
           agent {label 'aws'}
           steps {
             script { 
             try {
             sh 'echo "cloud" '
-            git branch: 'main', url: 'https://github.com/HaleemaEssa/jenkins-cloud.git'
+            git branch: 'main', url: 'https://github.com/HaleemaEssa/jenkins-cloud.git', credentialsId: 'linux-slave'
             //sh 'docker build -t haleema/docker-cloud:latest .'
             //dockerBuild("haleema/docker-cloud:latest")
             sh 'docker run -v "${PWD}:/data" -t haleema/docker-cloud'
