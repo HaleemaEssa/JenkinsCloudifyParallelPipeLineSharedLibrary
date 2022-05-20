@@ -133,7 +133,7 @@ pipeline {
             script { 
             try {
             sh 'echo "cloud" '
-            git branch: 'main', url: 'https://github.com/HaleemaEssa/jenkins-cloud.git', credentialsId: 'linux-slave'
+            git branch: 'main', url: 'https://github.com/HaleemaEssa/jenkins-cloud.git', credentialsId: 'cloudifyjenkins'
             //sh 'docker build -t haleema/docker-cloud:latest .'
             //dockerBuild("haleema/docker-cloud:latest")
             sh 'docker run -v "${PWD}:/data" -t haleema/docker-cloud'
